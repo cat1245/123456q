@@ -28,6 +28,83 @@
             <next>
               <block type="oled_drawtext" id="50">
                 <field name="TEXT">now get out of here</field>
+                <next>
+                  <block type="controls_whileUntil" id="132" inline="false">
+                    <field name="MODE">UNTIL</field>
+                    <value name="NUMBER">
+                      <block type="sensor_button" id="183">
+                        <field name="OBJECT">UP</field>
+                      </block>
+                    </value>
+                    <statement name="DO">
+                      <block type="movement_forward" id="83">
+                        <next>
+                          <block type="robot_delay" id="100" inline="true">
+                            <value name="DELAY">
+                              <block type="math_number" id="139">
+                                <field name="NUM">5000</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="controls_if" id="191" inline="false">
+                                <mutation elseif="1" else="1"></mutation>
+                                <value name="IF0">
+                                  <block type="sensor_object" id="209">
+                                    <field name="OBJECT">LEFTFRONT</field>
+                                  </block>
+                                </value>
+                                <statement name="DO0">
+                                  <block type="movement_right" id="236">
+                                    <next>
+                                      <block type="robot_delay" id="298" inline="true">
+                                        <value name="DELAY">
+                                          <block type="math_number" id="305">
+                                            <field name="NUM">2000</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                                <value name="IF1">
+                                  <block type="sensor_object" id="345">
+                                    <field name="OBJECT">RIGHTFRONT</field>
+                                  </block>
+                                </value>
+                                <statement name="DO1">
+                                  <block type="movement_right" id="346">
+                                    <next>
+                                      <block type="robot_delay" id="347" inline="true">
+                                        <value name="DELAY">
+                                          <block type="math_number" id="348">
+                                            <field name="NUM">2000</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                                <statement name="ELSE">
+                                  <block type="movement_forward" id="281">
+                                    <next>
+                                      <block type="robot_delay" id="312" inline="true">
+                                        <value name="DELAY">
+                                          <block type="math_number" id="313">
+                                            <field name="NUM">2000</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
               </block>
             </next>
           </block>
